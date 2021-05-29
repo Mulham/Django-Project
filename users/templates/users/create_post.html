@@ -1,0 +1,5 @@
+<div>
+    {% if user.is_authenticated %}
+    <a href="{% url 'blog_create' %}">Create New Post</a>
+    {% endif %}
+</div>
