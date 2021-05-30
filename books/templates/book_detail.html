@@ -15,6 +15,13 @@
         <br>
         <h5>Category:</h5>
         <p>{{ book.category.name }}</p>
+        <br>
+        {% if user.is_authenticated %}
+        <h5>Donwload Link:</h5>
+        <p>{{ book.url }}</p>
+        {% else %}
+        <p>You must Login or Register to Download the Book</p>
+        {% endif %}
     </div>
    
 

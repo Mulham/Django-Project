@@ -1,7 +1,7 @@
 from django.shortcuts import redirect, render
 from .models import Book, Comment
 from .forms import BookForm, CommentForm
-from django.views.generic import DetailView
+from django.contrib.auth.decorators import permission_required
 # Create your views here.
 def index(request):
     books = Book.objects.all().order_by('-created_on')
@@ -14,7 +14,9 @@ def index(request):
 
     return render(request, "index.html", context)
 
+@permission_required('auth.add_book')
 def model_form_upload(request):
+
     if request.method == 'POST':
         form = BookForm(request.POST, request.FILES)
         if form.is_valid():

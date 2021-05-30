@@ -1,5 +1,9 @@
+from .forms import CustomUserCreationForm
 from django.shortcuts import render
+from django.contrib.auth import login
+from django.shortcuts import redirect, render
 
+from django.urls import reverse
 # Create your views here.
 def dashboard(request):
 
