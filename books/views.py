@@ -1,8 +1,12 @@
 from django.shortcuts import redirect, render
+import os
 from .models import Book, Category, Comment
 from .forms import BookForm, CommentForm
 from django.contrib.auth.decorators import permission_required
 # Create your views here.
+
+
+
 def index(request):
     books = Book.objects.all().order_by('-created_on')
     context = {
@@ -88,3 +92,4 @@ def book_category(request, category):
     }
 
     return render(request, "book_category.html", context)
+
