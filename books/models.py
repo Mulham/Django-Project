@@ -8,7 +8,7 @@ class Category(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    category = models.ManyToManyField('Category', related_name='books')
+    categories = models.ManyToManyField('Category', related_name='books')
     image = models.FileField(upload_to="upload/")
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
