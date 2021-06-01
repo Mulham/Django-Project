@@ -1,0 +1,9 @@
+
+  {% if user %}
+    {% if user.success %}
+  <p><strong>{{ user.name|default_if_none:"" }}</strong> has <strong>{{ user.public_repos }}</strong> public repositories.</p>
+    {% else %}
+      <p><em>{{ user.message }}</em></p>
+      {% endif %}
+  {% endif %}
+

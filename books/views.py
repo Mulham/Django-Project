@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
-import os
 from .models import Book, Category, Comment
+import requests
 from .forms import BookForm, CommentForm
 from django.contrib.auth.decorators import permission_required
 # Create your views here.
@@ -93,3 +93,13 @@ def book_category(request, category):
 
     return render(request, "book_category.html", context)
 
+def github(request, pk):
+    user = {}
+    book = Book.objects.get(pk = pk)
+    username = book.author
+    url = 'https://api.github.com/users/%s' % username
+    response = requests.get(url)
+    search_was_successful = (response.status_code == 200)  # 200 = SUCCESS
+    user = response.json()
+    user['success'] = search_was_successful
+    return render(request, 'github.html', {'user': user})
