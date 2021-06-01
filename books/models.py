@@ -23,7 +23,8 @@ class Book(models.Model):
     last_modified = models.DateTimeField(auto_now=True)
     url = models.FileField(upload_to='books', validators=[validate_file_extension])
     author = models.CharField(max_length=60)
-
+    def __str__(self):
+        return self.title
    
 class Comment(models.Model):
 
