@@ -3,7 +3,7 @@ A Simple Library Web Application using Django
 
 ## Screenshot
 
-[! Screenshot](Screenshot.png)
+![Screenshot](Screenshot.png)
 
 ## Features
 
