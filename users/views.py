@@ -32,7 +32,7 @@ def register(request):
 
             login(request, user)
 
-            return redirect(reverse("blog_index"))
+            return redirect(reverse("index"))
 
 def edit_profile(request):
     if request.method == "GET":

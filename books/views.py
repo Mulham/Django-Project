@@ -17,7 +17,7 @@ def index(request):
 
     return render(request, "index.html", context)
 
-@permission_required('auth.add_book')
+@permission_required('books.add_book')
 def model_form_upload(request):
 
     if request.method == 'POST':
