@@ -8,7 +8,7 @@
 <!--Staaart-->
 <h1>Books</h1>
 {% if perms.books.add_book %}
-<a href="/create" class="float">
+<a href="{% url 'create ' %}" class="float">
     <i class="fa fa-plus my-float"></i>
     </a>
 {% endif %}
@@ -61,44 +61,3 @@
 {% endfor %}
 </div></div>
 </ul>
-
-<!--
-
-<br>
-<div class="row">
-
-{% for book in books %}
-
-    <div class="col-md-4">
-
-        <div class="card mb-2">
-
-            <img class="card-img-top" src="{{ book.image.url }}">
-
-            <div class="card-body">
-
-                <h5 class="card-title">{{ book.title }}</h5>
-
-                <p class="card-text">{{ book.description | slice:":100"}}...</p>
-
-                <a href="{% url 'book_detail' book.pk %}"
-
-                   class="btn btn-primary">
-
-                    Read More
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    {% endfor %}
-
-</div>
-
-{% endblock %}
-
--->

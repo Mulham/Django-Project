@@ -93,7 +93,7 @@
         <br><br>
         {% if user.is_authenticated %}
         <h5>Donwload Link:</h5>
-        <p><a href="{{ book.url.url }}">Download</a></p>
+        <p><a href="{{ book.file.url }}">Download</a></p>
         {% else %}
         <p>You must <a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">Register</a> to Download the Book</p>
         {% endif %}
