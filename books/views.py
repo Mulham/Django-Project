@@ -33,6 +33,7 @@ def model_form_upload(request):
         'form': form
     })
 
+
 def book_detail(request, pk):
 
     book = Book.objects.get(pk=pk)
@@ -103,3 +104,4 @@ def github(request, pk):
     user = response.json()
     user['success'] = search_was_successful
     return render(request, 'github.html', {'user': user})
+

@@ -8,7 +8,7 @@
 <!--Staaart-->
 <h1>Books</h1>
 {% if perms.books.add_book %}
-<a href="{% url 'create ' %}" class="float">
+<a href="/create" class="float">
     <i class="fa fa-plus my-float"></i>
     </a>
 {% endif %}
@@ -21,7 +21,7 @@
   <li class="booking-card" style="background-image: url('{{ book.image.url }}')">
     <div class="book-container">
       <div class="content">
-        <input class="btn" type="button" onclick="location.href='{% url 'book_detail' book.pk%}'" value="Show Details" />
+       <input class="btn" type="button" onclick="location.href='{% url 'book_detail' book.pk%}'" value="Show Details" />
 
       </div>
     </div>
@@ -61,3 +61,4 @@
 {% endfor %}
 </div></div>
 </ul>
+{% endblock %}
